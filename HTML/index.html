@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <!-- links -->
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <title>Karol restaurant</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">Karol's restaurant</h1>
+      <h3 class="header-text">The best burgers and pizzas in town!</h3>
+    </header>
+
+    <main>
+      <section class="menu">
+        <!-- <div class="menu-container">
+          <p class="menu-emoji">🍕</p>
+          <div class="menu-info">
+            <h1>Pizza</h1>
+            <p>pepperoni,mushroom,mozarella</p>
+            <h2>14 €</h2>
+          </div>
+          <button class="plus-btn">+</button>
+        </div> -->
+      </section>
+
+      <section class="order hidden">
+        <div class="order-container">
+          <h1>Your order</h1>
+          <div class="order-pick">
+            <!-- <div class="order-item">
+              <h1>Pizza</h1>
+              <button class="order-remove-btn">remove</button>
+              <h2>14 €</h2>
+            </div> -->
+          </div>
+
+          <div class="order-total">
+            <h1>Total price:</h1>
+            <h2 class="order-sum"></h2>
+          </div>
+          <button class="complete-order-btn">Complete order</button>
+        </div>
+      </section>
+
+      <!-- Modal popout -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <form class="modal-form">
+          <h1>Enter card details</h1>
+          <input type="text" placeholder="Enter your name" />
+          <input type="text" placeholder="Enter card number" />
+          <input type="text" placeholder="Enter CVV" />
+        </form>
+      </div>
+    </main>
+
+    <script src="/JS/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-header: white;
+  --color-plusbtn: #8b8b8b;
+  --color-desc: #8b8b8b;
+  --color-completebtn: #16db99;
+}
+
+body {
+  font-family: "Smythe", sans-serif;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  min-height: 167px;
+  background-image: url(/images/header.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2.5rem 2rem;
+  color: var(--color-header);
+}
+
+.header-title,
+.header-text {
+  text-shadow: 0.1rem 0.3rem 0.3rem black;
+}
+
+/* MENU SECTION */
+.menu-container {
+  max-width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border-bottom: 0.5px solid var(--color-desc);
+}
+
+.menu-emoji {
+  font-size: 4rem;
+}
+
+.menu-info p {
+  color: var(--color-desc);
+}
+
+.plus-btn {
+  margin-left: auto;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: 0.07rem solid var(--color-plusbtn);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ORDER SECTION */
+.order-container {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.order-pick {
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.order-item h2 {
+  margin-left: auto;
+}
+
+.order-remove-btn {
+  border: none;
+  background: none;
+  color: var(--color-desc);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top: 0.5px solid var(--color-desc);
+}
+
+.complete-order-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-completebtn);
+  border: none;
+  color: var(--color-header);
+  font-weight: 700;
+}
+
+/* HIDE ORDER SECTION */
+.hidden {
+  display: none;
+}
+
+/* MODAL SECTION */
+.modal {
+  /* display: none; */ /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-form {
+  display: grid;
+  place-content: center;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
