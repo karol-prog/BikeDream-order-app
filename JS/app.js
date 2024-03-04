@@ -4,6 +4,7 @@ const menu = document.querySelector(".menu");
 const orderSection = document.querySelector(".order");
 const order = document.querySelector(".order-pick");
 const orderSum = document.querySelector(".order-sum");
+const modal = document.querySelector(".modal");
 
 //store the clicked menu item
 let storeOrder = [];
@@ -51,6 +52,7 @@ function getOrderDataArr(orders) {
     </div>    
   `;
   });
+
   return orderPick;
 }
 //function for render the order
@@ -69,6 +71,8 @@ document.addEventListener("click", (e) => {
     handlePlusClick(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
     deleteStoreOrder(e.target.dataset.remove);
+  } else if (e.target.id === "complete-order-btn") {
+    modal.showModal();
   }
 });
 
@@ -99,6 +103,7 @@ function totalPrice(price) {
 
 //function for deleting item from order array
 function deleteStoreOrder(removeId) {
+  console.log("remove", removeId);
   //remove object from array by id
   storeOrder.splice(removeId, 1);
   //update the renderOrder function
@@ -108,4 +113,9 @@ function deleteStoreOrder(removeId) {
     //add hidden class from order section
     orderSection.classList.add("hidden");
   }
+}
+
+//funciton for show modal
+function showModal() {
+  modal.style.display = "block";
 }

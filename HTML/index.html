@@ -48,18 +48,41 @@
             <h1>Total price:</h1>
             <h2 class="order-sum"></h2>
           </div>
-          <button class="complete-order-btn">Complete order</button>
+          <button id="complete-order-btn" class="complete-order-btn">
+            Complete order
+          </button>
         </div>
       </section>
 
       <!-- Modal popout -->
       <div id="myModal" class="modal">
         <!-- Modal content -->
-        <form class="modal-form">
+        <form class="modal-form" method="dialog">
           <h1>Enter card details</h1>
-          <input type="text" placeholder="Enter your name" />
-          <input type="text" placeholder="Enter card number" />
-          <input type="text" placeholder="Enter CVV" />
+          <input
+            class="inputfields"
+            type="text"
+            placeholder="Enter your name"
+            required
+          />
+          <input
+            class="inputfields"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]"
+            maxlength="16"
+            placeholder="Enter card number"
+            required
+          />
+          <input
+            class="inputfields"
+            type="text"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="Enter CVV"
+            required
+          />
+          <button type="submit" class="complete-order-btn">Pay</button>
         </form>
       </div>
     </main>
