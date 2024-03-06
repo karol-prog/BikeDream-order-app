@@ -15,17 +15,21 @@ function getData(data) {
 
   data.forEach((item) => {
     //object destructor for array objects properties
-    const { name, ingredients, id, price, emoji } = item;
+    const { name, description, id, price, bikeImg } = item;
 
     dataToHtml += `
-    <div class="menu-container">
-        <p class="menu-emoji">${emoji}</p>
-        <div class="menu-info">
-            <h1>${name}</h1>
-            <p>${ingredients}</p>
-            <h2>${price} €</h2>
+    <div class="container">
+      <div class="menu-container">
+        <div class="bike-img-container">
+          <img class="bike-img" src=${bikeImg}>
         </div>
+        <div class="bike-info">
+            <h1>${name}</h1>
+            <p>${description}</p>
+            <h2>${price} €</h2>
+        </div>        
         <button class="plus-btn" data-add="${id}">+</button>
+      </div>
     </div>`;
   });
   return dataToHtml;
@@ -73,6 +77,10 @@ document.addEventListener("click", (e) => {
     deleteStoreOrder(e.target.dataset.remove);
   } else if (e.target.id === "complete-order-btn") {
     modal.showModal();
+  } else if (e.target.id === "pay-btn") {
+    e.preventDefault();
+    modal.remove();
+    thankYou();
   }
 });
 
@@ -115,7 +123,8 @@ function deleteStoreOrder(removeId) {
   }
 }
 
-//funciton for show modal
-function showModal() {
-  modal.style.display = "block";
+//thank you after ordering
+function thankYou() {
+  orderSection.innerHTML = `
+  <h1> Thank you for your order! </h1>`;
 }
