@@ -56,7 +56,6 @@ function getOrderDataArr(orders) {
     </div>    
   `;
   });
-
   return orderPick;
 }
 //function for render the order
@@ -76,11 +75,20 @@ document.addEventListener("click", (e) => {
   } else if (e.target.dataset.remove) {
     deleteStoreOrder(e.target.dataset.remove);
   } else if (e.target.id === "complete-order-btn") {
+    //show the modal after click
     modal.showModal();
   } else if (e.target.id === "pay-btn") {
-    e.preventDefault();
-    modal.remove();
-    thankYou();
+    //if function validateForm returns true make an pay order
+    if (validateForm()) {
+      e.preventDefault();
+      // Close modal
+      modal.close();
+      // Display thank you message
+      thankYou();
+    }
+    //close modal when you click on it background
+  } else if (e.target.id === "myModal") {
+    modal.close();
   }
 });
 
@@ -111,7 +119,6 @@ function totalPrice(price) {
 
 //function for deleting item from order array
 function deleteStoreOrder(removeId) {
-  console.log("remove", removeId);
   //remove object from array by id
   storeOrder.splice(removeId, 1);
   //update the renderOrder function
@@ -123,8 +130,25 @@ function deleteStoreOrder(removeId) {
   }
 }
 
+//Cant get to work the form with just required in HTML so i write a function that checks if inputfields had a required in their attribute and if does change boolean isFill to false
+function validateForm() {
+  // Get all the input fields in the form (nodeList)
+  const inputsInModal = document.querySelectorAll("form input");
+  // Initialize a variable to keep track of whether the form is fill
+  let isFill = true;
+
+  // Loop through each input field
+  inputsInModal.forEach((item) => {
+    if (item.hasAttribute("required") && item.value === "") {
+      isFill = false;
+    }
+  });
+  // Return the result
+  return isFill;
+}
+
 //thank you after ordering
 function thankYou() {
   orderSection.innerHTML = `
-  <h1> Thank you for your order! </h1>`;
+  <h1> Your dream bike is on the way! Thank you for your order! </h1>`;
 }

@@ -21,10 +21,13 @@
     </header>
 
     <main>
+
       <section class="menu">
           <!-- <div class="container">
             <div class="menu-container">
-              <img class="bike-img" src="/images/nomad.jpg">
+              <div class="bike-img-container">
+                <img class="bike-img" src="/images/nomad.jpg">
+              </div>
               <div class="bike-info">
                 <h1>Santa Cruz Nomad 6</h1>
                 <p>he Santa Cruz Nomad 6: A high-performance mountain bike built for tackling rugged trails and steep descents with precision and style.</p>
@@ -42,9 +45,9 @@
           <h1>Your order</h1>
           <div class="order-pick">
             <!-- <div class="order-item">
-              <h1>Pizza</h1>
+              <h1></h1>
               <button class="order-remove-btn">remove</button>
-              <h2>14 €</h2>
+              <h2>€</h2>
             </div> -->
           </div>
 
@@ -66,26 +69,26 @@
           <h1>Enter your details</h1>
           <input
             class="inputfields"
+            name="name"
             type="text"
             placeholder="Enter your name"
             required
           />
           <input
             class="inputfields"
+            name="email"
             type="email"
-            inputmode="numeric"
-            maxlength="16"
             placeholder="Enter your email"
             required
           />
           <input
             class="inputfields"
+            name="address"
             type="text"
-            inputmode="numeric"
             placeholder="Enter your address"
             required
           />
-          <button id="pay-btn" class="complete-order-btn">
+          <button type="submit" id="pay-btn" class="complete-order-btn">
             Pay
           </button>
         </form>

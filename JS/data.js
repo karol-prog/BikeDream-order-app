@@ -1,5 +1,6 @@
+//create the imgs
 const nomadImage = new Image();
-nomadImage.src = "/images/nomad.avif";
+nomadImage.src = "/images/nomad.png";
 
 const speslImage = new Image();
 speslImage.src = "/images/spesl.png";
