@@ -10,6 +10,7 @@
   --color-desc: #8b8b8b;
   --color-completebtn: #16db99;
   --color-span: #8ac926;
+  --color-shadow: #000;
 }
 
 body {
@@ -69,7 +70,7 @@ img:hover {
 
 .bike-info p {
   color: var(--color-desc);
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px var(--color-shadow);
 }
 
 .plus-btn {
