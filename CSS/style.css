@@ -36,8 +36,8 @@ span {
 
 img {
   display: block;
-  border-radius: 1rem;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: all 300ms ease;
 }
@@ -54,7 +54,9 @@ img:hover {
 }
 
 .bike-img-container {
-  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  min-height: 20rem;
 }
 
 .menu-container {
